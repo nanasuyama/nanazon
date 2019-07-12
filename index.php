@@ -90,32 +90,22 @@
 						<nav class="navbar">
 							<ul class="navbar_menu">
 								<li><a href="index.php">home</a></li>
-
-								<li class="nav-item dropdown">
-									<a href="admin/user_list.php" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" 
-									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">user</a>
-									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<a class="dropdown-item" href="admin/user_list.php">List</a>
-									<a class="dropdown-item" href="admin/user_add.php">Add</a>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">Something else here</a>
-									</div>
-								</li>
-
-								<li><a href="admin/category_list.php">category</a></li>
-								<li><a href="admin/item_list.php">item</a></li>
-								<li><a href="#">blog</a></li>
+								<li><a href="#">women's</a></li>
+								<li><a href="#">men's</a></li>
+								<li><a href="#">accessories</a></li>
+								<li><a href="admin/category_list.php">categories</a></li>
+								<li><a href="admin/item_list.php">items</a></li>
 								<li><a href="contact.html">contact</a></li>
 							</ul>
 							<ul class="navbar_user">
 								<li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
 								<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-								<!-- <li class="checkout">
+								<li class="checkout">
 									<a href="#">
 										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 										<span id="checkout_items" class="checkout_items">2</span>
 									</a>
-								</li> -->
+								</li>
 							</ul>
 							<div class="hamburger_container">
 								<i class="fa fa-bars" aria-hidden="true"></i>
@@ -127,55 +117,6 @@
 		</div>
 
 	</header>
-
-	<div class="fs_menu_overlay"></div>
-	<div class="hamburger_menu">
-		<div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
-		<div class="hamburger_menu_content text-right">
-			<ul class="menu_top_nav">
-				<li class="menu_item has-children">
-					<a href="#">
-						usd
-						<i class="fa fa-angle-down"></i>
-					</a>
-					<ul class="menu_selection">
-						<li><a href="#">cad</a></li>
-						<li><a href="#">aud</a></li>
-						<li><a href="#">eur</a></li>
-						<li><a href="#">gbp</a></li>
-					</ul>
-				</li>
-				<li class="menu_item has-children">
-					<a href="#">
-						English
-						<i class="fa fa-angle-down"></i>
-					</a>
-					<ul class="menu_selection">
-						<li><a href="#">French</a></li>
-						<li><a href="#">Italian</a></li>
-						<li><a href="#">German</a></li>
-						<li><a href="#">Spanish</a></li>
-					</ul>
-				</li>
-				<li class="menu_item has-children">
-					<a href="#">
-						My Account
-						<i class="fa fa-angle-down"></i>
-					</a>
-					<ul class="menu_selection">
-						<li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-						<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
-					</ul>
-				</li>
-				<li class="menu_item"><a href="#">home</a></li>
-				<li class="menu_item"><a href="#">shop</a></li>
-				<li class="menu_item"><a href="#">promotion</a></li>
-				<li class="menu_item"><a href="#">pages</a></li>
-				<li class="menu_item"><a href="#">blog</a></li>
-				<li class="menu_item"><a href="#">contact</a></li>
-			</ul>
-		</div>
-	</div>
 
 	<!-- Slider -->
 

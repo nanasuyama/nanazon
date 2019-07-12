@@ -52,6 +52,9 @@
             echo "</tbody>";
             echo "</table>";
 
-
+            
         ?>
         
+</body>
+
+</html>

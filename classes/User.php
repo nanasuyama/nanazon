@@ -3,20 +3,53 @@
 require_once "Config.php";
 
 class User extends Config {
-    public function login($username, $password){
+    public function login($username, $password){ //ログインする為
         $hashed_password = md5($password);
         $sql = "SELECT * FROM users 
-                WHERE username = '$username' AND password = '$password'";
+                WHERE username = '$username' AND password = '$hashed_password'";
         $result = $this->conn->query($sql);
 
-        if($result->num_rows ==1) {
+        if($result->num_rows == 1) {
             $row = $result->fetch_assoc();
             $_SESSION['user_id'] = $row['user_id'];
-            echo "<script>window.location.replace('users.php');</script>";
-        } else {
-            echo "<p class='text-danger'>Invalid Username or Password</p>";
+            if ($result->num_rows > 0) {
+                if ($row['status'] == 'A') { //ADMINなのかUSERなのかをチェック
+                    echo "<script>window.location.replace('admin/user_list.php');</script>";
+                } else {
+                    echo "<script>window.location.replace('index.php');</script>";
+                }
+            } else {
+                echo "<p class='text-danger'>Invalid Username or Password</p>";
+                
+            }
         }
     }
+
+    public function login_required_admin(){ //アドミンかどうかチェックする
+        if (!isset($_SESSION['user_id'])){
+            echo "<script>window.location.replace('../login.php');</script>";
+        } else {
+            $id = $_SESSION['user_id'];
+            $sql = "SELECT * FROM users WHERE user_id = $id";
+            $result = $this->conn->query($sql);
+            if($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+
+                if($row['status'] == 'U') { //ユーザーだったらログインに戻される
+                    echo "<script>window.location.replace('../login.php');</script>";
+                }
+            }
+        }
+    }
+
+    public function logout(){
+
+        session_destroy();
+        echo "<script>window.location.replace('../login.php');</script>";
+        exit;
+    }
+
+
     public function selectOne($id) {
         $sql = "SELECT * FROM users WHERE user_id = $id";
         $result = $this->conn->query($sql);
@@ -78,7 +111,7 @@ class User extends Config {
             echo "ERROR" . $this->conn->error;
         }
     }
-    
+
 }
 
 ?>
