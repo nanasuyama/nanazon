@@ -5,8 +5,8 @@
 ?>
 
 <div class="container" style="margin-top: 160px;"><br>
-    <div class="row">
-        <div class="col-6 justify-content-center">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
             <form action="user_action.php?action=add" method="post">
 
                 <div class="form-group">

@@ -90,11 +90,11 @@
 						<nav class="navbar">
 							<ul class="navbar_menu">
 								<li><a href="index.php">home</a></li>
-								<li><a href="#">women's</a></li>
+								<li><a href="categories.html">women's</a></li>
 								<li><a href="#">men's</a></li>
 								<li><a href="#">accessories</a></li>
-								<li><a href="admin/category_list.php">categories</a></li>
-								<li><a href="admin/item_list.php">items</a></li>
+								<li><a href="#">categories</a></li>
+								<li><a href="#">items</a></li>
 								<li><a href="contact.html">contact</a></li>
 							</ul>
 							<ul class="navbar_user">

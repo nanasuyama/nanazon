@@ -107,21 +107,41 @@ $user->login_required_admin();
 							</div>
 							<nav class="navbar">
 								<ul class="navbar_menu">
-									<li><a href="../index.php">home</a></li>
+									<li><a href="user_list.php">home</a></li>
 
 									<li class="nav-item dropdown">
 										<a href="admin/user_list.php" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" 
 										data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">user</a>
 										<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-										<a class="dropdown-item" href="user_list.php">List</a>
-										<a class="dropdown-item" href="user_add.php">Add</a>
+										<a class="dropdown-item" href="user_list.php">users</a>
+										<a class="dropdown-item" href="user_add.php">add user</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="#">Something else here</a>
+										</div>
+									</li>
+
+									<li class="nav-item dropdown">
+										<a href="category_list.php" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" 
+										data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">category</a>
+										<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+										<a class="dropdown-item" href="category_list.php">categories</a>
+										<a class="dropdown-item" href="category_add.php">add category</a>
 										<div class="dropdown-divider"></div>
 										<a class="dropdown-item" href="#">Something else here</a>
 										</div>
 									</li>
 									
-									<li><a href="category_list.php">categories</a></li>
-									<li><a href="item_list.php">items</a></li>
+									<li class="nav-item dropdown">
+										<a href="admin/item_list.php" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" 
+										data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">item</a>
+										<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+										<a class="dropdown-item" href="item_list.php">items</a>
+										<a class="dropdown-item" href="item_add.php">add item</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="#">Something else here</a>
+										</div>
+									</li>
+
 									<li><a href="contact.html">contact</a></li>
 								</ul>
 								<ul class="navbar_user">

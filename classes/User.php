@@ -83,7 +83,7 @@ class User extends Config {
         $result = $this->conn->query($sql);
 
         if($result) {
-            return true;
+            $this->redirect('user_list.php');
         } else {
             echo "ERROR" . $this->conn->error;
         }

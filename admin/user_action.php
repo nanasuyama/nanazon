@@ -4,7 +4,7 @@ require_once "../classes/User.php";
 
 $user = new User;
 
-if($_GET['action'] =='add'){
+if($_GET['action'] == 'add'){
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -15,11 +15,11 @@ if($_GET['action'] =='add'){
 
     $result = $user->save($username, $email, $password, $firstname,$lastname, $dob, $status);
 
-    if($result) {
-        echo "<script>window.location.replace('user_list.php');</script>";
-    } else {
-        echo "ERROR";
-    }
+    // if($result) {
+    //     echo "<script>window.location.replace('user_list.php');</script>";
+    // } else {
+    //     echo "ERROR";
+    // }
 }
 elseif ($_GET['action'] == 'update') {
         $user_id = $_POST['user_id'];

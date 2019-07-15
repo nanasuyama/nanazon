@@ -11,7 +11,7 @@
             
             if($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
-                    $rows[] = $row;
+                    $rows[] = $row; // ROWを確認する
                 }
                 return $rows;
             }  else {
@@ -33,10 +33,34 @@
         public function save($category_name) {
             $sql = "INSERT INTO categories(category_name)
                     VALUES ('$category_name')";
+
             $result = $this->conn->query($sql);
 
             if($result) {
-                
+                $this->redirect('category_list.php');
+            } else {
+                echo "ERROR" . $this->conn->error;
+            }
+        }
+
+        public function update ($id, $category_name) {
+            $sql = "UPDATE categories SET category_name = '$category_name'
+                    WHERE category_id = $id";
+            $result = $this->conn->query($sql);
+
+            if($result) {
+                $this->redirect('category_list.php');
+            } else {
+                echo "ERROR";
+            }
+        }
+
+        public function delete($id) {
+            $sql = "DELETE FROM categories WHERE category_id = $id";
+            $result = $this->conn->query($sql);
+
+            if($result) {
+                $this->redirect('category_list.php');
             }
         }
 
