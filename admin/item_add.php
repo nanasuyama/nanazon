@@ -6,7 +6,7 @@
 <div class="container" style="margin-top: 200px;">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <form action="item_action.php?action=add" method="post">
+            <form action="item_action.php?action=add" method="post" enctype="multipart/form-data">
                 
             <div class="form-group">
                 <label for="item_name">Item Name</label><br>
@@ -33,7 +33,7 @@
 
             <div class="form-group">
                 <label for="item_desc">Description</label>
-                <textarea name="item_desc" id="" cols="30" rows="10" class="form-control"></textarea>
+                <textarea name="item_desc" cols="30" rows="10" class="form-control"></textarea>
             </div>
 
             <div class="form-group">
@@ -46,6 +46,14 @@
                 <input type="number" name="item_quantity" class="form-control">
             </div>
 
+            <div class="form-group">
+                <label for="item_images"></label>
+                <input type="file" name="image1" id="">
+                <input type="file" name="image2" id="">
+                <input type="file" name="image3" id="">
+            </div>
+
+            
             <input type="submit" value="Save" name="add" class="btn btn-primary float-right mb-5">
 
             </form>

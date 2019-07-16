@@ -4,11 +4,15 @@
 
     class Item extends Config {
         public function selectAll() {
-            $sql = "SELECT * FROM items ORDER BY item_id ASC";
+            $sql = "SELECT * FROM items 
+            INNER JOIN categories ON items.category_id = categories.category_id
+            INNER JOIN users ON items.user_id = users.user_id
+            ORDER BY items.item_id ASC";
+
             $result = $this->conn->query($sql);
             $rows = array();
 
-            if($result->num_rows >0) {
+            if($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                     $rows[] = $row;
                 }
@@ -29,16 +33,30 @@
             }
         }
 
-        public function save($item_name, $category_id, $item_desc, $item_price, $item_quantity){
-            $sql = "INSERT INTO items(item_name, category_name, item_name, item_desc, item_price, item_quantity)
-                    VALUES ('$item_name', '$category_name', '$item_name', '$item_desc','$item_price', '$item_quantity')";
+        public function save($item_name, $category_id, $user_id, $item_desc, $item_price, $item_quantity, $image1, $tmp_image1, $image2, $tmp_image2, $image3, $tmp_image3){
+            $sql = "INSERT INTO items(item_name, category_id, user_id, item_desc, item_price, item_quantity)
+                    VALUES ('$item_name', '$category_id', '$user_id', '$item_desc','$item_price', '$item_quantity')";
             
             $result = $this->conn->query($sql);
 
             if($result) {
+                $item_id = $this->conn->insert_id; //ADDしたことによって作られたIDを取得する
+
+                $insert_image1 = $this->save_image($item_id, $image1, $tmp_image1);
+                $insert_image2 = $this->save_image($item_id, $image2, $tmp_image2);
+                $insert_image3 = $this->save_image($item_id, $image3, $tmp_image3);
+
                 $this->redirect('item_list.php');
             } else {
                 echo "ERROR";
+            }
+        }
+
+        public function save_image($item_id, $image, $tmp_image){
+            $path = "uploads/item_images/";
+            if(move_uploaded_file($tmp_image, $image)){
+                $sql = "INSERT INTO item_images(item_id, image_path, image_name)
+                        VALUES($item_id, $path, $tmp_image)";
             }
         }
 

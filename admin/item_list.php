@@ -6,6 +6,7 @@
     $item = new Item;
 
 ?>
+
 <div class="container">
     <table class="table table-hover" style="margin-top: 200px;">
         <thead>
@@ -33,13 +34,13 @@
                         echo "<tr>";
                             echo "<td>" . $row['item_id'] . "</td>";
                             echo "<td>" . $row['item_name'] . "</td>";
-                            echo "<td>" . $row['category_id'] . "</td>";
-                            echo "<td>" . $row['user_id'] . "</td>";
+                            echo "<td>" . $row['category_name'] . "</td>";
+                            echo "<td>" . $row['username'] . "</td>";
                             echo "<td>" . $row['item_price'] . "</td>";
                             echo "<td>" . $row['item_quantity'] . "</td>";
 
                             echo "<td>
-                                <a href='user_edit.php?user_id=$id' class='btn btn-info btn-sm'>Edit</a>";
+                                <a href='item_edit.php?item_id=$id' class='btn btn-info btn-sm'>Edit</a>";
             ?>
                                 <a href='item_action.php?action=delete&item_id=<?php echo $id;?>' class='btn btn-danger btn-sm' onclick='return confirm("Are you sure you want to delete?");'>Delete</a>
                                 </td>
