@@ -17,6 +17,7 @@
                 <th>Seller</th>
                 <th>Price</th>
                 <th>Quantity</th>
+                <th>Details</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -39,6 +40,7 @@
                             echo "<td>" . $row['item_price'] . "</td>";
                             echo "<td>" . $row['item_quantity'] . "</td>";
 
+                            echo "<td><a href='item_view.php?item_id=$id' class='btn btn-warning btn-sm'>View</a></td>";
                             echo "<td>
                                 <a href='item_edit.php?item_id=$id' class='btn btn-info btn-sm'>Edit</a>";
             ?>
