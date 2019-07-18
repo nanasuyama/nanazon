@@ -119,11 +119,12 @@
 
 	</header>
 
-	<div class="fs_menu_overlay"></div>
 
-	<!-- Hamburger Menu -->
+	<!-- <div class="fs_menu_overlay"></div> -->
 
-	<div class="hamburger_menu">
+	<!-- Hamburger Menu　モバイル用のメニューバー -->
+
+	<!-- <div class="hamburger_menu"> 
 		<div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
 		<div class="hamburger_menu_content text-right">
 			<ul class="menu_top_nav">
@@ -169,7 +170,7 @@
 				<li class="menu_item"><a href="#">contact</a></li>
 			</ul>
 		</div>
-	</div>
+	</div> -->
 
 	<div class="container single_product_container">
 		<div class="row">
@@ -195,9 +196,9 @@
 						<div class="col-lg-3 thumbnails_col order-lg-1 order-2">
 							<div class="single_product_thumbnails">
 								<ul>
-									<li><img src="images/single_1_thumb.jpg" alt="" data-image="images/single_1.jpg"></li>
-									<li class="active"><img src="images/single_2_thumb.jpg" alt="" data-image="images/single_2.jpg"></li>
-									<li><img src="images/single_3_thumb.jpg" alt="" data-image="images/single_3.jpg"></li>
+									<li><img src="images/edtshirt.jpg" alt="" data-image="images/edtshirt.jpg"></li>
+									<li class="active"><img src="images/edtshirt.jpg" alt="" data-image="images/edtshirt.jpg"></li>
+									<li><img src="images/edtshirt.jpg" alt="" data-image="images/edtshirt.jpg"></li>
 								</ul>
 							</div>
 						</div>

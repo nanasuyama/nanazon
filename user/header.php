@@ -3,8 +3,9 @@
     session_start();
     include_once '../classes/User.php';
 
-    $user = new User;
-
+	$user = new User;
+	$userid = $_SESSION['user_id'];
+	$get_loggedin_user = $user->selectOne($userid);
 
 ?>
 
@@ -41,7 +42,6 @@
 				<div class="row">
 					<div class="col-md-6">
                         <div class="top_nav_left">free shipping on all u.s orders over $50</div>
-                        <div class="text-white">Welcome <?php echo $_SESSION['username'];?></div>
 					</div>
 					<div class="col-md-6 text-right">
 						<div class="top_nav_right">
@@ -79,8 +79,8 @@
 										<i class="fa fa-angle-down"></i>
 									</a>
 									<ul class="account_selection">
-										<li><a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-										<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+										<li><a href="#"><i class="fa fa-user"></i><?php echo $get_loggedin_user['username']; ?></a></li>
+										<li><a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>Sign out</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -102,7 +102,7 @@
 						<nav class="navbar">
 							<ul class="navbar_menu">
 								<li><a href="index.php">home</a></li>
-								<li><a href="categories.html">women's</a></li>
+								<li><a href="categories.php">women's</a></li>
 								<li><a href="#">men's</a></li>
 								<li><a href="#">accessories</a></li>
 								<li><a href="#">categories</a></li>

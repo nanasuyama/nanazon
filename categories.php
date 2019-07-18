@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>NANAZON Categories</title>
+<title>Colo Shop Categories</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Colo Shop Template">
@@ -69,7 +70,7 @@
 									</a>
 									<ul class="account_selection">
 										<li><a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-										<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+										<li><a href="register.php"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -86,7 +87,7 @@
 				<div class="row">
 					<div class="col-lg-12 text-right">
 						<div class="logo_container">
-							<a href="#">NANA<span>ZON</span></a>
+							<a href="#">nana<span>zon</span></a>
 						</div>
 						<nav class="navbar">
 							<ul class="navbar_menu">
@@ -155,10 +156,10 @@
 						My Account
 						<i class="fa fa-angle-down"></i>
 					</a>
-					<!-- <ul class="menu_selection">
-						<li><a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+					<ul class="menu_selection">
+						<li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
 						<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
-					</ul> -->
+					</ul>
 				</li>
 				<li class="menu_item"><a href="#">home</a></li>
 				<li class="menu_item"><a href="#">shop</a></li>
@@ -638,7 +639,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="footer_nav_container">
-						<div class="cr">©2018 All Rights Reserverd. Template by <a href="#">Colorlib</a> &amp; distributed by <a href="https://themewagon.com">ThemeWagon</a></div>
+						<div class="cr">©2018 All Rights Reserverd. Template by <a href="#">Colorlib</a></div>
 					</div>
 				</div>
 			</div>

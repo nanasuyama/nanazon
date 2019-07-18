@@ -90,8 +90,8 @@
 						<nav class="navbar">
 							<ul class="navbar_menu">
 								<li><a href="index.php">home</a></li>
-								<li><a href="categories.html">women's</a></li>
-								<li><a href="#">men's</a></li>
+								<li><a href="categories.php">women's</a></li>
+								<li><a href="categories.php">men's</a></li>
 								<li><a href="#">accessories</a></li>
 								<li><a href="#">categories</a></li>
 								<li><a href="#">items</a></li>
@@ -142,21 +142,21 @@
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url(images/banner_1.jpg)">
 						<div class="banner_category">
-							<a href="categories.html">women's</a>
+							<a href="categories.php">women's</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url(images/banner_2.jpg)">
 						<div class="banner_category">
-							<a href="categories.html">accessories's</a>
+							<a href="categories.php">accessories's</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="banner_item align-items-center" style="background-image:url(images/banner_3.jpg)">
 						<div class="banner_category">
-							<a href="categories.html">men's</a>
+							<a href="categories.php">men's</a>
 						</div>
 					</div>
 				</div>
