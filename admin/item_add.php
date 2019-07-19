@@ -37,8 +37,8 @@
             </div>
 
             <div class="form-group">
-                <label for="item_price">Price (JPY)</label>
-                <input type="number" name="item_price" class="form-control" placeholder="¥">
+                <label for="item_price">Price</label>
+                <input type="number" name="item_price" class="form-control" placeholder="USD">
             </div>
 
             <div class="form-group">

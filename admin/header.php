@@ -164,3 +164,81 @@ $user->login_required_admin();
 			</div>
 
 		</header>
+
+		<div class="hamburger_menu">
+		<div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+		<div class="hamburger_menu_content text-right">
+			<ul class="menu_top_nav">
+
+				<li class="menu_item"><a href="user_list.php">home</a></li>
+
+				<li class="menu_item has-children">
+					<a href="#">
+						usd
+						<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="menu_selection">
+						<li><a href="#">cad</a></li>
+						<li><a href="#">aud</a></li>
+						<li><a href="#">eur</a></li>
+						<li><a href="#">gbp</a></li>
+					</ul>
+				</li>
+				<li class="menu_item has-children">
+					<a href="#">
+						English
+						<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="menu_selection">
+						<li><a href="#">French</a></li>
+						<li><a href="#">Italian</a></li>
+						<li><a href="#">German</a></li>
+						<li><a href="#">Spanish</a></li>
+					</ul>
+				</li>
+				<li class="menu_item has-children">
+					<a href="#">
+						My Account
+						<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="menu_selection">
+						<li><a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+						<li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+					</ul>
+				</li>
+
+				<li class="menu_item has-children">
+					<a href="#">
+						users
+						<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="menu_selection">
+						<li><a href="user_list.php">user list</a></li>
+						<li><a href="user_add.php">add user</a></li>
+					</ul>
+				</li>
+
+				<li class="menu_item has-children">
+					<a href="#">
+						categories
+						<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="menu_selection">
+						<li><a href="category_list.php">category list</a></li>
+						<li><a href="category_add.php">add category</a></li>
+					</ul>
+				</li>
+
+				<li class="menu_item has-children">
+					<a href="#">
+						items
+						<i class="fa fa-angle-down"></i>
+					</a>
+					<ul class="menu_selection">
+						<li><a href="item_list.php">item list</a></li>
+						<li><a href="item_add.php">add item</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>

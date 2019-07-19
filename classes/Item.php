@@ -36,6 +36,16 @@
                 return false;
             }
         }
+        public function selectMainImage($id) {
+            $sql = "SELECT * FROM item_images WHERE item_id=$id LIMIT 1";
+            $result = $this->conn->query($sql);
+
+            if($result) {
+                return $result->fetch_assoc(); 
+            } elseif($this->conn->error){
+                echo "ERROR";
+            }
+        }
 
         public function selectOne($id) {
             $sql = "SELECT * FROM items WHERE item_id = $id";
