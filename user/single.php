@@ -8,6 +8,7 @@
 	$get_item = $item->selectOne($item_id);
 	$list_image = $item->selectAllImage($item_id);
 
+
 ?>
 
 <div class="container single_product_container">
@@ -87,37 +88,36 @@
 						diam dolor, elementum etos lobortis des mollis ut...</p>
 				</div><br>
 
-				<button type="submit" class="d-flex flex-row align-items-center justify-content-center btn btn-warning text-white w-100">
-					<span class="ti-bag"></span><span>  Add to cart</span>
-				</button><br>
+				<form action="add_cart_action.php?action=addToCart&item_id=<?php echo $item_id;?>" method="post">
 
+					<input type="submit" value="Add To Cart"
+						class="d-flex flex-row align-items-center justify-content-center btn btn-warning text-white w-100"><br>
+					
+					<input type="hidden" name="item_price" value="<?php echo $get_item['item_price'];?>">
+					<div class="product_price">$<?php echo $get_item['item_price'];?>.00</div>
 
-				<div class="product_price">$<?php echo $get_item['item_price'];?>.00</div>
+					<!-- <div class="product_price">$495.00</div> -->
 
-				<!-- <div class="product_price">$495.00</div> -->
+					<ul class="star_rating">
+						<li><i class="fa fa-star" aria-hidden="true"></i></li>
+						<li><i class="fa fa-star" aria-hidden="true"></i></li>
+						<li><i class="fa fa-star" aria-hidden="true"></i></li>
+						<li><i class="fa fa-star" aria-hidden="true"></i></li>
+						<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+					</ul>
 
-				<ul class="star_rating">
-					<li><i class="fa fa-star" aria-hidden="true"></i></li>
-					<li><i class="fa fa-star" aria-hidden="true"></i></li>
-					<li><i class="fa fa-star" aria-hidden="true"></i></li>
-					<li><i class="fa fa-star" aria-hidden="true"></i></li>
-					<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-				</ul>
-				
-				<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
-					<span>Quantity:</span>
-					<div class="quantity_selector">
-					<input type="number" name="item_quantity" min="1" max="<?php echo $get_item['item_quantity'];?>" class="form-control">
+					<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
+						<span>Quantity:</span>
+						<div class="quantity_selector">
+							<input type="number" name="item_quantity" min="1"
+								max="<?php echo $get_item['item_quantity'];?>" class="form-control">
+						</div>
+						
+						<!-- <button class="red_button add_to_cart_button"><a href="#">add to cart</a></button> -->
+						<div class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
 					</div>
-					<!-- <div class="quantity_selector">
-						<span class="minus"><i class="fa fa-minus" aria-hidden="true"></i></span>
-						<span id="quantity_value">1</span>
-						<span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
-					</div>
-					<div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-					<div class="product_favorite d-flex flex-column align-items-center justify-content-center"></div> -->
-				</div>
 			</div>
+			</form>
 		</div>
 	</div>
 
@@ -167,7 +167,7 @@
 						</div>
 						<div class="col-lg-5 offset-lg-2 desc_col">
 							<div class="tab_image">
-							<img src="../<?php echo $values['image_path'].$values['image_name']; ?>">
+								<img src="../<?php echo $values['image_path'].$values['image_name']; ?>">
 							</div>
 							<div class="tab_text_block">
 								<h2><?php echo $get_item['item_name'];?></h2>
@@ -175,7 +175,7 @@
 									Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
 							</div>
 							<div class="tab_image desc_last">
-							<img src="../<?php echo $values['image_path'].$values['image_name']; ?>">
+								<img src="../<?php echo $values['image_path'].$values['image_name']; ?>">
 							</div>
 						</div>
 					</div>

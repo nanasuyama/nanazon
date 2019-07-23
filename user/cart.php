@@ -60,9 +60,9 @@
                         <input type="number" name="item_quantity" min="1" max="<?php echo $get_item['item_quantity'];?>"
                             class="form-control">
                     </div>
-                    <br><br>
+                    <br>
                 </div>
-
+                <br>
                 <button type="submit" class="d-flex flex-row align-items-center justify-content-center btn btn-warning text-white w-100">
                     <span class="ti-bag"></span><span class="p-1"> CHECK OUT</span>
                 </button><br>
