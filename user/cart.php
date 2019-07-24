@@ -1,76 +1,78 @@
 <?php
-
-    require_once '../classes/Item.php';
     include 'header.php';
-
-
-	$item = new Item;
-	$item_id = $_GET['item_id'];
-	$get_item = $item->selectOne($item_id);
-	$list_image = $item->selectAllImage($item_id);
+    
 
 ?>
-<div class="container" style="margin:200px;">
+<div class="container" style="margin-top:200px;">
     <div class="row">
-        <div class="col-md-6">
-            <form action="" method="post">
-                <div class="thumbnails">
-                    <ul>
-                        <li class="active">
-                            <img src="../<?php echo $get_item['image_path'].$get_item['image_name']; ?>"
-                                data-image="../<?php echo $values['image_path'].$values['image_name']; ?>" alt="">
-                        </li>
+        <div class="col-sm-8">
+            <div class="thumbnails">
+                <div class="card">
+                    <ul class="list-group list-group-flush">
+                        <?php
+                        require_once '../classes/Cart.php';
+                        $cart = new Cart;
+                        $list_item = $cart->selectCartItems($userid);
 
-                        <li>
-                            <img src="../<?php echo $values['image_path'].$values['image_name']; ?>"
-                                data-image="../<?php echo $values['image_path'].$values['image_name']; ?>" alt="">
+                        require_once '../classes/Item.php';
+                        $item = new Item;
+                        foreach($list_item as $key => $row){
+                            $cart_id=$row['cart_id'];
+                            $item_id=$row['item_id'];
+                            $list_image = $item->selectAllImage($item_id);
+                            // print_r($list_image);
+                        ?>
+                        <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <img src="../<?php echo $list_image[0]['image_path'] . $list_image[0]['image_name'];?>" alt="" style="width:100%;">
+                                    </div> 
+                                    <div class="col-sm-6 mt-4">
+                                        <p class="lead"><?php echo $row['item_name'];?></p>
+                                    </div>
+
+                                    <div class="col-sm-2 mt-4">
+                                        <p class="lead">$<?php echo $row['ci_price'];?>.00</p>
+                                        
+                                    </div>
+
+                                    <div class="col-sm-2 mt-4">
+                                        <p class="lead">Qty : <?php echo $row['ci_quantity'];?></p>
+                                    </div>
+                                </div>
                         </li>
+                        <?php
+                                }
+                            ?>
 
                     </ul>
                 </div>
-
-        </div>
-
-        <div class="col-md-6">
-            <div class="product_details">
-                <div class="product_details_title">
-                    <h2><?php echo $get_item['item_name'];?></h2>
-                    <p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque
-                        diam dolor, elementum etos lobortis des mollis ut...</p>
-                </div><br>
-
-
-
-
-                <div class="product_price">$<?php echo $get_item['item_price'];?>.00</div>
-
-                <!-- <div class="product_price">$495.00</div> -->
-
-                <ul class="star_rating">
-                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                </ul>
-
-                <div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
-                    <span>Quantity:</span>
-                    <div class="quantity_selector">
-                        <input type="number" name="item_quantity" min="1" max="<?php echo $get_item['item_quantity'];?>"
-                            class="form-control">
-                    </div>
-                    <br>
-                </div>
-                <br>
-                <button type="submit" class="d-flex flex-row align-items-center justify-content-center btn btn-warning text-white w-100">
-                    <span class="ti-bag"></span><span class="p-1"> CHECK OUT</span>
-                </button><br>
             </div>
         </div>
-        </form>
+
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header bg-warning">
+                    <p class="lead">Order Summary</p>
+                </div>
+                <div class="card-body">
+                    <?php
+                    $sum = $cart->selectSum($cart_id);
+                    
+                    ?>
+                    <p class="lead">Subtotal
+                        <span class="float-right">$<?php echo $sum['total_price'];?>.00</span></p>
+                    <p class="lead">Shipping Fee
+                        <span class="float-right">Free</span>
+                    </p>
+                    <p class="lead">Total
+                        <span class="float-right">$<?php echo $sum['total_price'];?>.00</span>
+                    </p>
+                    <input type="submit" value="CHECK OUT" class="alert alert-primary btn btn-primary float-right">
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 </div>
 
 

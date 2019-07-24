@@ -106,7 +106,7 @@
 						<nav class="navbar">
 							<ul class="navbar_menu">
 								<li><a href="index.php">home</a></li>
-								<li><a href="categories.php">women's</a></li>
+								<li><a href="#">women's</a></li>
 								<li><a href="#">men's</a></li>
 								<li><a href="#">accessories</a></li>
 								<li><a href="#">categories</a></li>

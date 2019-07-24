@@ -90,7 +90,9 @@
                 $row = $result->fetch_assoc(); // Get the result data
                 $cart_id = $row['cart_id']; // Get the id
 
-                $sql = "SELECT * FROM cart_items WHERE cart_id = $cart_id";
+                $sql = "SELECT * FROM cart_items 
+                        INNER JOIN items ON  cart_items.item_id = items.item_id
+                        WHERE cart_items.cart_id = $cart_id";
                 $result = $this->conn->query($sql); // Run or execute query
 
                 if($result->num_rows > 0){ // Check if there are results
@@ -98,12 +100,23 @@
                     while($row = $result->fetch_assoc()){ // Get the result data
                         $rows[] = $row; // Populate rows with every row data from the db
                     }
-                    return $rows; // Return the populated array
+                    return $rows; // Return the populated
                 } else {
                     echo "Oh Snap! There are no items in your cart.";
                 }
             } else{
                 echo "Oh Snap! There are no items in your cart.";
+            }
+        }
+
+        public function selectSum($cart_id){
+            $sql = "SELECT sum(ci_price) as total_price FROM cart_items WHERE cart_id = $cart_id";
+            $result = $this->conn->query($sql);
+
+            if($result){
+                return $result->fetch_assoc();
+            } elseif($this->conn->error) {
+                echo "ERROR" . $this->conn->error;
             }
         }
 

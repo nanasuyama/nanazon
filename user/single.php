@@ -109,7 +109,7 @@
 					<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
 						<span>Quantity:</span>
 						<div class="quantity_selector">
-							<input type="number" name="item_quantity" min="1"
+							<input type="number" name="item_quantity" min="1" value="1"
 								max="<?php echo $get_item['item_quantity'];?>" class="form-control">
 						</div>
 						
