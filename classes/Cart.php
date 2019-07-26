@@ -23,7 +23,7 @@
                     if($insert_item){
                         $update_item = $this->updateItemQuantity($item_id, $item_quantity);
                         if($update_item){
-                            $this->redirect('index.php');
+                            $this->redirect('cart.php');
                         }
                     }
                 } else {
@@ -36,7 +36,7 @@
                 if($insert_item){
                 $update_item = $this->updateItemQuantity($item_id, $item_quantity);
                 if($update_item){
-                    $this->redirect('index.php');
+                    $this->redirect('cart.php');
                 }
                 }
             }
@@ -103,9 +103,11 @@
                     return $rows; // Return the populated
                 } else {
                     echo "Oh Snap! There are no items in your cart.";
+                    return false;
                 }
             } else{
                 echo "Oh Snap! There are no items in your cart.";
+                return false;
             }
         }
 
@@ -120,8 +122,58 @@
             }
         }
 
+        public function selectAllPaymentMethod(){
+            $sql = "SELECT * FROM payment_method
+                    ORDER BY payment_id ASC";
+            $result = $this->conn->query($sql);
+            $rows = array();
+
+            if($result->num_rows > 0){
+                while($row = $result->fetch_assoc()){
+                    $rows[] = $row;
+                }
+                return $rows;
+            } else {
+                return false;
+            }
+        }
+
+         public function checkout($cart_id,$ua_id,$payment_id){
+            $sql = "UPDATE cart SET cart_status = 'closed' 
+                    WHERE cart_id = $cart_id";
+            $result = $this->conn->query($sql);
+
+            if($result){
+                $sql = "INSERT INTO checkout(cart_id,ua_id,payment_id)
+                VALUES ('$cart_id', '$ua_id', '$payment_id')";
+
+                $result = $this->conn->query($sql);
+                if($result){
+                    $this->redirect('index.php');
+                } else {
+                    echo "ERROR" . $this->conn->error;
+                }
+            }
+        }
 
 
+    public function selectAddress($userid){
+        $sql = "SELECT * FROM user_address
+                WHERE user_id = $userid";
+        $result = $this->conn->query($sql);
+
+        if ($result) {
+            return $result->fetch_assoc();
+        } elseif ($this->conn->error) {
+            echo "ERROR" . $this->conn->error;
+        }
+    }
+
+    public function selectOrderHistory($cart_id, $cart_status){
+        
+
+           
+  }
 
     }
 

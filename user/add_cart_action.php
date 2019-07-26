@@ -13,7 +13,11 @@
         $result = $cart->saveCart($item_id, $user_id, $item_quantity, $item_price);
 
     }
-    
+    elseif($_GET == 'checkout'){
+        $cart_id = $_GET['cart_id'];
 
+        $result = $cart->selectSum($cart_id);
+    }
+    
 
 ?>
