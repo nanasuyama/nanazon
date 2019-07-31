@@ -101,7 +101,8 @@
 				<div class="row">
 					<div class="col-lg-12 text-right">
 						<div class="logo_container">
-							<a href="#">nana<span>zon</span></a>
+							<!-- <a href="#">nana<span>zon</span></a> -->
+							<img src="../images/nanazon.jpg" alt="" style="width:100px;">
 						</div>
 						<nav class="navbar">
 							<ul class="navbar_menu">

@@ -55,22 +55,6 @@
         </div>
 
         <div class="col-sm-4">
-            <!-- <div class="card">
-                <div class="car-header">
-                    <p class="lead">ADDRESS</p>
-                </div>
-                <div class="card-body">
-                        <?php 
-                            
-                            // $get_address = $cart->selectAllAddress();
-                            
-                        ?>
-
-                    <p class="lead">
-                        
-                    </p>
-                </div>
-            </div> -->
             <div class="card">
                 <div class="card-header bg-warning">
                     <p class="lead">Order Summary</p>
@@ -100,6 +84,7 @@
                     <?php
                     }
                     ?>
+                    <a href="index.php" class="btn btn-outline-info d-block alert alert-info">SHOP MORE!</a>
                 </div>
             </div>
         </div>
